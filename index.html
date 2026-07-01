@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+<!--gives the page title-->
+{% block title %}
+    Home - Secure Password Manager
+{% endblock %}
+
+<!--starts content on the main page-->
+{% block content %}
+
+     <!--main heading of the page content-->
+    <h1>Secure Password Manager</h1>
+
+    <p>
+        Store, generate, retrieve, and manage your passwords securely.
+    </p>
+    <!--container for home page navigation-->
+    <div class="home-buttons">
+        <a href="{{ url_for('register') }}">
+            Register
+        </a> <!--it gives links to register-->
+
+        <a href="{{ url_for('login') }}">
+            Login
+        </a> <!--gives link to login-->
+    </div>
+
+{% endblock %}

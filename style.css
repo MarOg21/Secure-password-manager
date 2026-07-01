@@ -1,0 +1,124 @@
+body {
+margin: 0;
+font-family: Arial, sans-serif;
+background-color: #f4f6f8;
+color: #222222;
+}
+
+.container {
+width: 90%;
+max-width: 800px;
+margin: 40px auto;
+padding: 30px;
+background-color: white;
+border-radius: 8px;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h1,
+h2,
+h3 {
+color: #1f2937;
+}
+
+form {
+display: flex;
+flex-direction: column;
+gap: 12px;
+margin-top: 20px;
+}
+
+label {
+font-weight: bold;
+}
+
+input {
+padding: 10px;
+font-size: 16px;
+border: 1px solid #cccccc;
+border-radius: 5px;
+}
+
+button,
+a {
+display: inline-block;
+padding: 10px 16px;
+border: none;
+border-radius: 5px;
+background-color: #2563eb;
+color: white;
+text-decoration: none;
+cursor: pointer;
+font-size: 15px;
+}
+
+button:hover,
+a:hover {
+background-color: #1d4ed8;
+}
+
+.home-buttons,
+.dashboard-actions,
+.credential-actions {
+display: flex;
+gap: 10px;
+flex-wrap: wrap;
+margin: 20px 0;
+}
+
+.credential-card {
+margin: 20px 0;
+padding: 18px;
+border: 1px solid #dddddd;
+border-radius: 6px;
+background-color: #fafafa;
+}
+
+.credential-card input {
+width: 60%;
+}
+
+.message {
+padding: 12px;
+margin-bottom: 15px;
+background-color: #fff3cd;
+border: 1px solid #ffe69c;
+border-radius: 5px;
+color: #664d03;
+}
+
+.logout-form {
+margin-top: 30px;
+}
+
+.logout-form button {
+background-color: #dc2626;
+}
+
+.logout-form button:hover {
+background-color: #b91c1c;
+}
+
+@media (max-width: 600px) {
+.container {
+width: auto;
+margin: 15px;
+padding: 20px;
+}
+
+.home-buttons,
+.dashboard-actions,
+.credential-actions {
+flex-direction: column;
+}
+
+button,
+a {
+text-align: center;
+}
+
+.credential-card input {
+width: 100%;
+box-sizing: border-box;
+}
+}

@@ -1,0 +1,51 @@
+
+<!--main layout used by all pages, with blocks for title and content that can be overridden by child templates.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+>
+
+    <title>
+         {% block title %}
+             Secure Password Manager
+         {% endblock %} #allows each page to set its own title.
+    </title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> <!--links to the CSS file that styles the application.-->
+
+</head>
+
+<body>
+
+    <main class="container">
+
+       {% with messages = get_flashed_messages() %} <!--This shows messages created by the flash-->
+
+          {% if messages %}
+
+             {% for message in messages %} 
+
+                 <p class="message">
+                     {{ message }}
+                 </p>
+
+             {% endfor %}
+
+          {% endif %}
+
+       {% endwith %}
+
+<!--other templates put the contents of their pages in here-->
+       {% block content %} 
+       {% endblock %}
+
+    </main>
+
+</body>
+</html>

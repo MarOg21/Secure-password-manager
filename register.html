@@ -1,0 +1,73 @@
+
+<!--uses the shared layout from the base.html-->
+{% extends "base.html" %}
+
+
+<!--gives th epage title-->
+{% block title %}
+    Register - Secure Password Manager
+{% endblock %}
+
+{% block content %}
+
+     <!--page header-->
+    <h1>Create an Account</h1>
+
+    <form method="POST">
+
+        <!--This adds the CSRF token-->
+        <input
+            type="hidden"
+            name="csrf_token"
+            value="{{ csrf_token() }}"
+        > 
+
+        <label for="username">
+            Username
+        </label>
+
+        <!--the field for all the username inputs-->
+        <input
+            type="text"
+            id="username"
+            name="username"
+            minlength="3"
+            maxlength="50"
+            required
+        >
+
+        <label for="password">
+            Master Password
+        </label>
+
+        <!--the field for all passwords inputs-->
+        <input
+            type="password"
+            id="password"
+            name="password"
+            minlength="12"
+            required
+        >
+
+        <button type="submit">
+            Register
+        </button>
+
+    </form>
+
+    <!--the link for users who already have an account-->
+    <p>
+        Already have an account?
+        <a href="{{ url_for('login') }}">
+            Login here
+        </a>
+    </p>
+
+    <!--link for redirecting to homepage-->
+    <p>
+        <a href="{{ url_for('index') }}">
+            Return to Home
+        </a>
+    </p>
+
+{% endblock %}
